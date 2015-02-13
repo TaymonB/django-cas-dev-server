@@ -31,7 +31,7 @@ ROOT_URLCONF = 'cas_dev_server.internal.urls'
 
 WSGI_APPLICATION = 'cas_dev_server.internal.wsgi.application'
 
-DATABASES = {'default': env.db()}
+DATABASES = {'default': env.db(engine=env('DATABASE_ENGINE', str, None))}
 
 LANGUAGE_CODE = env('LANGUAGE_CODE', str)
 TIME_ZONE = env('TIME_ZONE', str)
