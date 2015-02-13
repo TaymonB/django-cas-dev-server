@@ -29,6 +29,7 @@ setup(
     packages=['cas_dev_server'],
     install_requires=[
         'Django>=1.7',
+        'django-environ',
         'django-mama-cas',
     ],
 )
