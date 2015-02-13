@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
 setup(
     name='django-cas-dev-server',
@@ -26,7 +26,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP :: HTTP Servers',
         'Topic :: Software Development',
     ],
-    packages=['cas_dev_server'],
+    packages=find_packages(),
     install_requires=[
         'Django>=1.7',
         'django-environ',
