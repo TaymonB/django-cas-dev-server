@@ -9,7 +9,7 @@ setup(
     author_email='taymonbeal@gmail.com',
     license='MIT',
     platforms=['OS Independent'],
-    keywords='development django cas',
+    keywords='cas development django',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Console',
