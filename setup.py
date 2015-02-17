@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-cas-dev-server',
-    version='0.1.1',
+    version='0.1.2',
     description='Extends the Django development server to include a local CAS server.',
     url='https://github.com/TaymonB/django-cas-dev-server',
     author='Taymon A. Beal',
