@@ -13,18 +13,18 @@ def db_url_unparse(db_config):
     url = ''
     if db_config['ENGINE'] in DB_SCHEMES_BY_BACKEND:
         url += DB_SCHEMES_BY_BACKEND[db_config['ENGINE']] + ':'
-    url += '//' + db_config.get('USER', '')
+    url += '//' + (db_config.get('USER') or '')
     if db_config.get('PASSWORD'):
         url += ':' + db_config['PASSWORD']
     if db_config.get('USER') or db_config.get('PASSWORD'):
         url += '@'
-    url += db_config.get('HOST', '')
+    url += db_config.get('HOST') or ''
     if db_config.get('PORT'):
         url += ':' + str(db_config['PORT'])
     url += '/'
     if not (db_config['ENGINE'] == 'ldapdb.backends.ldap' or
             (db_config['ENGINE'] == 'django.db.backends.sqlite3' and db_config.get('NAME') == ':memory:')):
-        url += db_config.get('NAME', '')
+        url += db_config.get('NAME') or ''
     params = dict(db_config.get('OPTIONS', {}),
                   **{option.lower(): db_config[option]
                      for option in environ.Env._DB_BASE_OPTIONS if db_config.get(option)})
